@@ -1,4 +1,4 @@
-# ubi-presto
+# ubi-hadoop
 
 Docker Image build of Hadoop from RHEL UBI base image.
 
