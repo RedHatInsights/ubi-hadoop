@@ -46,7 +46,8 @@ RUN curl -sLo ${PREFIX}/hadoop-${HADOOP_VERSION}.tar.gz \
     && mkdir -p /hadoop/dfs/name \
     && chown -R 1002:0 ${PREFIX} /hadoop ${HADOOP_CONF_DIR} \
     && chmod -R 774 ${PREFIX} /hadoop ${HADOOP_CONF_DIR} /etc/passwd \
-    && chmod -R 777 ${HADOOP_LOG_DIR}
+    && chmod -R 777 ${HADOOP_LOG_DIR} \
+    && chmod -R g+rwx $(readlink -f ${JAVA_HOME}) $(readlink -f ${JAVA_HOME}/lib/security)
 
 # Java security config
 RUN touch $JAVA_HOME/lib/security/java.security && \
