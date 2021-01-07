@@ -2,4 +2,4 @@
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-grep 'ARG HADOOP_VERSION' ${SCRIPT_DIR}/Dockerfile | cut -d '=' -f 2
+grep -E '^ARG HADOOP_VERSION' ${SCRIPT_DIR}/Dockerfile | cut -d '=' -f 2
