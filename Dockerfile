@@ -1,4 +1,4 @@
-FROM centos:7 as build
+FROM quay.io/centos/centos:centos7 as build
 
 ARG HADOOP_VERSION=3.1.1
 ENV HADOOP_RELEASE_TAG=rel/release-${HADOOP_VERSION}
